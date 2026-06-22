@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kompas Martynui</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:#0f172a;
+    color:white;
+    min-height:100vh;
+    padding:50px 20px;
+}
+
+.container{
+    max-width:1400px;
+    margin:auto;
+}
+
+.header{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.header h1{
+    font-size:3rem;
+    font-weight:800;
+    background:linear-gradient(90deg,#00d4ff,#7c3aed);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.header p{
+    color:#94a3b8;
+    margin-top:15px;
+    font-size:1.1rem;
+}
+
+.products{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:30px;
+}
+
+.card{
+    background:#111827;
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:24px;
+    overflow:hidden;
+    transition:.35s;
+    position:relative;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    border-color:#7c3aed;
+    box-shadow:0 20px 40px rgba(124,58,237,.25);
+}
+
+.badge{
+    position:absolute;
+    top:15px;
+    right:15px;
+    background:linear-gradient(135deg,#7c3aed,#00d4ff);
+    padding:8px 14px;
+    border-radius:50px;
+    font-size:.75rem;
+    font-weight:700;
+    z-index:2;
+}
+
+.card-image{
+    height:240px;
+    overflow:hidden;
+}
+
+.card-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.content{
+    padding:25px;
+}
+
+.price{
+    font-size:2rem;
+    font-weight:800;
+    color:#00d4ff;
+    margin-bottom:10px;
+}
+
+.title{
+    font-size:1.4rem;
+    font-weight:700;
+    margin-bottom:15px;
+}
+
+.specs{
+    list-style:none;
+    margin-bottom:20px;
+}
+
+.specs li{
+    padding:8px 0;
+    color:#cbd5e1;
+    border-bottom:1px solid rgba(255,255,255,0.05);
+}
+
+.description{
+    color:#94a3b8;
+    line-height:1.6;
+    margin-bottom:20px;
+}
+
+.fps-box{
+    background:#0b1220;
+    border:1px solid rgba(255,255,255,.06);
+    border-radius:16px;
+    padding:16px;
+}
+
+.fps-title{
+    font-weight:700;
+    margin-bottom:12px;
+}
+
+.fps{
+    display:flex;
+    justify-content:space-between;
+    gap:15px;
+    padding:8px 0;
+    color:#e2e8f0;
+}
+
+.btn{
+    display:block;
+    width:100%;
+    text-align:center;
+    text-decoration:none;
+    margin-top:20px;
+    border:none;
+    padding:14px;
+    border-radius:14px;
+    background:linear-gradient(135deg,#7c3aed,#00d4ff);
+    color:white;
+    font-weight:700;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.btn:hover{
+    opacity:.9;
+    transform:scale(1.02);
+}
+
+@media(max-width:768px){
+    .header h1{
+        font-size:2.2rem;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="header">
+        <h1>Kompas Martynui</h1>
+        <p>Kompiuteriai ir monitoriai pagal skirtingą biudžetą bei žaidimų poreikius.</p>
+    </div>
+
+    <div class="products">
+
+        <!-- PC 1 -->
+        <div class="card">
+            <div class="badge">Geriausias biudžetinis</div>
+
+            <div class="card-image">
+                <img src="case1.jpg" alt="RTX 3070 Gaming PC">
+            </div>
+
+            <div class="content">
+                <div class="price">€455</div>
+                <div class="title">RTX 3070 Gaming PC</div>
+
+                <ul class="specs">
+                    <li>RTX 3070 8GB - apie 300€</li>
+                    <li>Ryzen 5 5500 - apie 60€</li>
+                    <li>8GB DDR4 RAM - Erikas duos nemokamai</li>
+                    <li>500GB SSD - Erikas duos nemokamai</li>
+                    <li>B550 pagrindinė plokštė - apie 50€</li>
+                    <li>500W maitinimo blokas - apie 30€</li>
+                </ul>
+
+                <div class="description">
+                    Geras kainos ir našumo variantas žaidimams. RTX 3070 puikiai tinka 1080p ir 1440p rezoliucijai.
+                </div>
+
+                <div class="fps-box">
+                    <div class="fps-title">Trumpai apie FPS</div>
+
+                    <div class="fps">
+                        <span>CS2</span>
+                        <strong>220-320 FPS</strong>
+                    </div>
+
+                    <div class="fps">
+                        <span>Rainbow Six Siege</span>
+                        <strong>250-350 FPS</strong>
+                    </div>
+                </div>
+
+                <a class="btn" href="pc-rtx3070-budget.html">Peržiūrėti šį variantą</a>
+            </div>
+        </div>
+
+        <!-- ViewSonic monitorius vietoje 600€ kompo -->
+        <div class="card">
+            <div class="badge">240Hz monitorius</div>
+
+            <div class="card-image">
+                <img src="viewsonic.jpg" alt="ViewSonic VX2779A-HD-PRO monitorius">
+            </div>
+
+            <div class="content">
+                <div class="price">€122 - 240Hz</div>
+                <div class="title">ViewSonic VX2779A-HD-PRO</div>
+
+                <ul class="specs">
+                    <li>27 colių ekranas</li>
+                    <li>1920x1080 Full HD rezoliucija</li>
+                    <li>240Hz atsinaujinimo dažnis</li>
+                    <li>1ms reakcijos laikas</li>
+                    <li>IPS panelė</li>
+                    <li>Puikiai tinka esport žaidimams</li>
+                </ul>
+
+                <div class="description">
+                    Greitas 240Hz monitorius, skirtas CS2, Valorant, Rainbow Six Siege, Rocket League ir kitiems konkurenciniams žaidimams.
+                </div>
+
+                <div class="fps-box">
+                    <div class="fps-title">Pagrindiniai privalumai</div>
+
+                    <div class="fps">
+                        <span>Sklandumas</span>
+                        <strong>240Hz</strong>
+                    </div>
+
+                    <div class="fps">
+                        <span>Reakcija</span>
+                        <strong>1ms</strong>
+                    </div>
+                </div>
+
+                <a class="btn" href="viewsonic-240hz.html">Peržiūrėti monitorių</a>
+            </div>
+        </div>
+
+        <!-- PC 3 -->
+        <div class="card">
+            <div class="badge">Pigiausias</div>
+
+            <div class="card-image">
+                <img src="case3.jpg" alt="RTX 3050 Budget Gaming PC">
+            </div>
+
+            <div class="content">
+                <div class="price">€300</div>
+                <div class="title">RTX 3050 biudžetinis PC</div>
+
+                <ul class="specs">
+                    <li>RTX 3050 8GB - apie 120€</li>
+                    <li>Ryzen 5 3600X - apie 40€</li>
+                    <li>16GB DDR4 RAM - apie 25€</li>
+                    <li>500GB SSD - apie 20€</li>
+                    <li>B450 pagrindinė plokštė - apie 35€</li>
+                    <li>500W maitinimo blokas - apie 30€</li>
+                    <li>Korpusas - apie 30€</li>
+                </ul>
+
+                <div class="description">
+                    Pats pigiausias variantas, bet vis tiek tinkamas 1080p esport žaidimams ir kasdieniam naudojimui.
+                </div>
+
+                <div class="fps-box">
+                    <div class="fps-title">Trumpai apie FPS</div>
+
+                    <div class="fps">
+                        <span>CS2</span>
+                        <strong>120-180 FPS</strong>
+                    </div>
+
+                    <div class="fps">
+                        <span>Rainbow Six Siege</span>
+                        <strong>180-250 FPS</strong>
+                    </div>
+                </div>
+
+                <a class="btn" href="pc-rtx3050-budget.html">Peržiūrėti šį variantą</a>
+            </div>
+        </div>
+
+        <!-- AOC monitorius -->
+        <div class="card">
+            <div class="badge">144Hz QHD</div>
+
+            <div class="card-image">
+                <img src="monitor-viewsonic.jpg" alt="AOC CQ27G2U/BK monitorius">
+            </div>
+
+            <div class="content">
+                <div class="price">€130 - 144hz</div>
+                <div class="title">AOC Gaming CQ27G2U/BK</div>
+
+                <ul class="specs">
+                    <li>27 colių ekranas</li>
+                    <li>2560x1440 QHD rezoliucija</li>
+                    <li>144Hz atsinaujinimo dažnis</li>
+                    <li>1ms reakcijos laikas</li>
+                    <li>Lenktas ekranas</li>
+                    <li>Geras balansas tarp vaizdo kokybės ir greičio</li>
+                </ul>
+
+                <div class="description">
+                    144Hz QHD monitorius su lenktu ekranu. Tinka, jeigu nori ryškesnio vaizdo nei Full HD ir sklandaus gameplay.
+                </div>
+
+                <div class="fps-box">
+                    <div class="fps-title">Pagrindiniai privalumai</div>
+
+                    <div class="fps">
+                        <span>Rezoliucija</span>
+                        <strong>QHD</strong>
+                    </div>
+
+                    <div class="fps">
+                        <span>Sklandumas</span>
+                        <strong>144Hz</strong>
+                    </div>
+                </div>
+
+                <a class="btn" href="pc-rtx3070-5700x.html">Peržiūrėti monitorių</a>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
