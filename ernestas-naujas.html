@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Naujas kompiuteris Ernestui</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:#0f172a;
+    color:white;
+    min-height:100vh;
+    padding:40px 20px 60px;
+}
+
+.container{
+    width:100%;
+    max-width:1100px;
+    margin:auto;
+}
+
+.back-button{
+    display:inline-block;
+    margin-bottom:30px;
+    color:#00d4ff;
+    text-decoration:none;
+    font-weight:700;
+    transition:.3s;
+}
+
+.back-button:hover{
+    color:#7c3aed;
+}
+
+.pc-card{
+    overflow:hidden;
+    background:#111827;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:24px;
+    box-shadow:0 20px 50px rgba(0,0,0,.2);
+}
+
+.hero-image{
+    position:relative;
+    height:420px;
+    overflow:hidden;
+    background:#0b1220;
+}
+
+.hero-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+
+.badge{
+    position:absolute;
+    top:20px;
+    right:20px;
+    padding:10px 16px;
+    border-radius:50px;
+    font-size:.8rem;
+    font-weight:800;
+    background:linear-gradient(135deg,#7c3aed,#00d4ff);
+}
+
+.content{
+    padding:40px;
+}
+
+.title-section{
+    margin-bottom:35px;
+}
+
+.title-section h1{
+    margin-bottom:12px;
+    font-size:2.7rem;
+    font-weight:800;
+    background:linear-gradient(90deg,#00d4ff,#7c3aed);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.price{
+    color:#00d4ff;
+    font-size:2rem;
+    font-weight:800;
+}
+
+.intro{
+    margin-top:20px;
+    color:#94a3b8;
+    font-size:1.05rem;
+    line-height:1.8;
+}
+
+.section{
+    margin-top:40px;
+}
+
+.section h2{
+    margin-bottom:18px;
+    font-size:1.6rem;
+}
+
+.specs{
+    list-style:none;
+    border-top:1px solid rgba(255,255,255,.07);
+}
+
+.specs li{
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+    padding:14px 0;
+    border-bottom:1px solid rgba(255,255,255,.07);
+    color:#cbd5e1;
+}
+
+.specs strong{
+    color:white;
+    text-align:right;
+}
+
+.parts-grid{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:16px;
+}
+
+.part-link{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+    padding:17px;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:14px;
+    background:#0b1220;
+    color:white;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.part-link:hover{
+    transform:translateY(-3px);
+    border-color:#7c3aed;
+}
+
+.part-link span{
+    color:#cbd5e1;
+}
+
+.part-link strong{
+    color:#00d4ff;
+    text-align:right;
+}
+
+.table-wrapper{
+    overflow-x:auto;
+    border-radius:16px;
+    border:1px solid rgba(255,255,255,.07);
+}
+
+table{
+    width:100%;
+    min-width:650px;
+    border-collapse:collapse;
+}
+
+th,
+td{
+    padding:16px;
+    text-align:left;
+    border-bottom:1px solid rgba(255,255,255,.07);
+}
+
+th{
+    background:#0b1220;
+    color:#00d4ff;
+}
+
+td{
+    color:#cbd5e1;
+}
+
+td strong{
+    color:white;
+}
+
+.pros{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:16px;
+}
+
+.pro{
+    padding:18px;
+    border-radius:14px;
+    background:#0b1220;
+    border:1px solid rgba(255,255,255,.07);
+    color:#cbd5e1;
+    line-height:1.6;
+}
+
+.pro strong{
+    display:block;
+    margin-bottom:5px;
+    color:white;
+}
+
+.note{
+    margin-top:18px;
+    padding:18px;
+    border-left:4px solid #7c3aed;
+    border-radius:8px;
+    background:#0b1220;
+    color:#94a3b8;
+    line-height:1.7;
+}
+
+.bottom-button{
+    display:block;
+    width:100%;
+    margin-top:40px;
+    padding:16px;
+    border-radius:14px;
+    text-align:center;
+    text-decoration:none;
+    color:white;
+    font-weight:800;
+    background:linear-gradient(135deg,#7c3aed,#00d4ff);
+    transition:.3s;
+}
+
+.bottom-button:hover{
+    opacity:.9;
+    transform:scale(1.01);
+}
+
+@media(max-width:750px){
+    .content{
+        padding:28px;
+    }
+
+    .hero-image{
+        height:280px;
+    }
+
+    .title-section h1{
+        font-size:2.1rem;
+    }
+
+    .parts-grid,
+    .pros{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:500px){
+    body{
+        padding:25px 15px 45px;
+    }
+
+    .content{
+        padding:22px;
+    }
+
+    .hero-image{
+        height:220px;
+    }
+
+    .specs li{
+        display:block;
+    }
+
+    .specs strong{
+        display:block;
+        margin-top:6px;
+        text-align:left;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <a class="back-button" href="ernestas.html">
+        ← Grįžti į Ernesto pasirinkimus
+    </a>
+
+    <main class="pc-card">
+
+        <div class="hero-image">
+            <img src="caseE.jpg" alt="Naujas RTX 3060 Ti kompiuteris">
+            <div class="badge">Visos dalys naujos</div>
+        </div>
+
+        <div class="content">
+
+            <div class="title-section">
+                <h1>Ryzen 5 5500 + RTX 3060 Ti</h1>
+                <div class="price">Apie 600 €</div>
+
+                <p class="intro">
+                   Kompas su visom naujom dalim, nereiks ieskot pas zmones, sukt galvos kad apipis ir testuot nuvaziavus detales. uz 600 zjbs nes realiai viska galesi zaist be problemu, ant 1080p, panassios galios kaip PS5 jis.
+                </p>
+            </div>
+
+            <section class="section">
+                <h2>Kompiuterio specifikacijos</h2>
+
+                <ul class="specs">
+                    <li>
+                        <span>GPU</span>
+                        <strong>NVIDIA GeForce RTX 3060 12GB</strong>
+                    </li>
+
+                    <li>
+                        <span>CPU</span>
+                        <strong>AMD Ryzen 7 5700X</strong>
+                    </li>
+
+                    <li>
+                        <span>RAM</span>
+                        <strong>16GB DDR4 3200MHz</strong>
+                    </li>
+
+                    <li>
+                        <span>Motherboard</span>
+                        <strong>Gigabyte A520M</strong>
+                    </li>
+
+                    <li>
+                        <span>SSD</span>
+                        <strong>500GB NVMe SSD (Labai kainos sukile dbr SSD, galesiu is saves SSD uz 10-20Eu parduot antra, kad zaidimus susidiegt)</strong>
+                    </li>
+
+                    <li>
+                        <span>PSU</span>
+                        <strong>650W</strong>
+                    </li>
+
+                    <li>
+                        <span>Case</span>
+                        <strong>Deze</strong>
+                    </li>
+
+                    <li>
+                        <span>CPU Cooler</span>
+                        <strong>Daro brrrrrrrr</strong>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="section">
+                <h2>Dalių nuorodos</h2>
+
+                <div class="parts-grid">
+
+                    <a class="part-link" href="https://www.varle.lt/vaizdo-plokstes/vaizdo-plokste-asus-geforce-rtx-3060-dual-12gb-oc--16105570.html?aff=6be45dfe4c9d714ba7b948b94ae2abb4" target="_blank">
+                        <span>GPU</span>
+                        <strong>SPAUSK</strong>
+                    </a>
+
+                    <a class="part-link" href="https://www.kilobaitas.lt/kompiuteriai_ir_komponentai/kompiuteriu_komponentai/procesoriai_cpu/cpuamddesktopryzen_75700xvermeer3400_mhzcores_832mbsocket_sam465_wattsoem100-000000926/product.aspx?itemid=1102080" target="_blank">
+                        <span>CPU</span>
+                        <strong>SPAUSK</strong>
+                    </a>
+
+                    <a class="part-link" href="https://www.kilobaitas.lt/kompiuteriai_ir_komponentai/kompiuteriu_komponentai/operatyvine_atmintis_ram/memory_dimm_16gb_pc25600_ddr4k2_f4-3200c16d-16gis_gskill/product.aspx?itemid=707738" target="_blank">
+                        <span>RAM</span>
+                        <strong>SPAUSK</strong>
+                    </a>
+
+                    <a class="part-link" href="https://www.kilobaitas.lt/kompiuteriai_ir_komponentai/kompiuteriu_komponentai/pagrindines_plokstes_mb/mainboardgigabyteamd_a520sam4micro-atxmemory_ddr4memory_slots_4a520mds3hv2/product.aspx?itemid=883645" target="_blank">
+                        <span>Motherboard</span>
+                        <strong>SPAUSK</strong>
+                    </a>
+
+                    <a class="part-link" href="https://www.varle.lt/kietieji-diskai/pny-technologies-cs1030-500-gb-m2-pci-express-30--19242629.html" target="_blank">
+                        <span>SSD</span>
+                        <strong>SPAUSK</strong>
+                    </a>
+
+                    <a class="part-link" href="https://www.kilobaitas.lt/kompiuteriai_ir_komponentai/kompiuteriu_komponentai/maitinimo_blokai_psu/gigabyte_psu__gp-p650ss_geu1__650_w/product.aspx?itemid=1112141" target="_blank">
+                        <span>PSU</span>
+                        <strong>SPAUSK</strong>
+                    </a>
+
+                    <a class="part-link" href="https://www.kilobaitas.lt/kompiuteriai_ir_komponentai/kompiuteriu_komponentai/korpusai_ir_priedai_case/korpusai/casegolden_tigermicro_atxblackmini_towerraider_sl-2raidersl-2/product.aspx?itemid=1134665" target="_blank">
+                        <span>Case</span>
+                        <strong>SPAUSK</strong>
+                    </a>
+
+                    <a class="part-link" href="https://www.kilobaitas.lt/kompiuteriai_ir_komponentai/kompiuteriu_komponentai/ausintuvai_coolers/procesoriu_ausintuvai/deepcool__cpu_cooler__ag300__black__intel_amd__r-ag300-bknnmn-g/product.aspx?itemid=752314" target="_blank">
+                        <span>CPU Cooler</span>
+                        <strong>SPAUSK</strong>
+                    </a>
+
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Tikėtinas FPS 1080p rezoliucijoje</h2>
+
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Žaidimas</th>
+                                <th>Nustatymai</th>
+                                <th>Tikėtinas FPS</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>Counter-Strike 2</td>
+                                <td>Low / Competitive</td>
+                                <td><strong>220–320 FPS</strong></td>
+                            </tr>
+
+                            <tr>
+                                <td>Rainbow Six Siege</td>
+                                <td>Medium / Competitive</td>
+                                <td><strong>260–360 FPS</strong></td>
+                            </tr>
+
+                            <tr>
+                                <td>Valorant</td>
+                                <td>Low / Competitive</td>
+                                <td><strong>300–450 FPS</strong></td>
+                            </tr>
+
+                            <tr>
+                                <td>PUBG</td>
+                                <td>Medium / Competitive</td>
+                                <td><strong>120–170 FPS</strong></td>
+                            </tr>
+
+                            <tr>
+                                <td>Rocket League</td>
+                                <td>High</td>
+                                <td><strong>250–400 FPS</strong></td>
+                            </tr>
+
+                            <tr>
+                                <td>League of Legends</td>
+                                <td>Very High</td>
+                                <td><strong>250–400+ FPS</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="note">
+                    FPS yra apytiksliai. Gali per YT pasiziuret kaip zmones benchmarkina butent ta CPU ir GPU, ten aiskiau parodo kiek FPS. Bet GPU pas mane tokia pati, viska veza :D
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Pagrindiniai privalumai</h2>
+
+                <div class="pros">
+                    <div class="pro">
+                        <strong>Garantija</strong>
+                        Visos dalys naujos, todel jei kas atsitiks yra garantija, nunesi pakeis.
+                    </div>
+
+                    <div class="pro">
+                        <strong>Zjbs ant 1080p</strong>
+                        Kompas tinka 144Hz ir 240Hz monitoriams, jei noresi i CS2 pro leage eit :D
+                    </div>
+
+                    <div class="pro">
+                        <strong>RTX ir DLSS palaikymas</strong>
+                        Galima naudot NVIDIA DLSS, ray tracing nes RTX korta, kai reiks suzinosi ka tai reiskia :D AI SUDAS kuris padaro kad daugiau FPS butu, bet cia tik casual games tinka.
+                    </div>
+
+                    <div class="pro">
+                        <strong>Lengva paupgradint ateityje</strong>
+                        Galesi ir CPU nauja pasiimt, aisku dabar jau eina AM5, tai netiks, bet dar AM4 pakankamai geru CPU turi brangiu, kurie viska paveza o GPU visada nauja idesi, tas pats lizdas.
+                    </div>
+                </div>
+            </section>
+
+            <a class="bottom-button" href="ernestas.html">
+                Grįžti prie abiejų variantų
+            </a>
+
+        </div>
+    </main>
+
+</div>
+
+</body>
+</html>

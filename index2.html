@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kompiuterių rekomendacijos</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Inter',sans-serif;
+background:#0f172a;
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+color:white;
+}
+
+.container{
+width:100%;
+max-width:900px;
+text-align:center;
+padding:30px;
+}
+
+h1{
+font-size:3rem;
+margin-bottom:20px;
+font-weight:800;
+background:linear-gradient(90deg,#00d4ff,#7c3aed);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.subtitle{
+color:#94a3b8;
+font-size:1.1rem;
+margin-bottom:60px;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:30px;
+}
+
+.card{
+background:#111827;
+border-radius:22px;
+padding:35px;
+border:1px solid rgba(255,255,255,.08);
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 20px 40px rgba(124,58,237,.25);
+border-color:#7c3aed;
+}
+
+.card h2{
+margin-bottom:15px;
+font-size:2rem;
+}
+
+.card p{
+color:#94a3b8;
+line-height:1.7;
+margin-bottom:30px;
+}
+
+.btn{
+display:inline-block;
+width:100%;
+padding:15px;
+border-radius:14px;
+text-decoration:none;
+font-weight:700;
+background:linear-gradient(135deg,#7c3aed,#00d4ff);
+color:white;
+transition:.3s;
+}
+
+.btn:hover{
+opacity:.9;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Kompiuterių rekomendacijos</h1>
+
+<p class="subtitle">
+Pasirink, kuriam kompiuteriui nori peržiūrėti rekomendacijas.
+</p>
+
+<div class="cards">
+
+<div class="card">
+
+<h2>🖥️ Kompas Martynui</h2>
+
+<p>
+Kompiuterių ir monitorių pasiūlymai, FPS palyginimai,
+naudotų dalių nuorodos bei rekomendacijos.
+</p>
+
+<a class="btn" href="index.html">
+Atidaryti
+</a>
+
+</div>
+
+<div class="card">
+
+<h2>🖥️ Kompas Ernestui</h2>
+
+<p>
+Kompiuterių komplektacijos, monitorių rekomendacijos
+ir būsimi pasiūlymai Ernestui.
+</p>
+
+<a class="btn" href="ernestas.html">
+Atidaryti
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>
